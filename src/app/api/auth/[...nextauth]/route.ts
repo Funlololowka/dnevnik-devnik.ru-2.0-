@@ -15,7 +15,7 @@ export const authOptions: NextAuthOptions = {
 
         try {
           const { data } = await axios.get('https://api.dnevnik.ru/v2/users/me', {
-            headers: { Authorization: `Bearer ${credentials.token}` },
+            headers: { Cookie: `DnevnikAuth_a=${credentials.token}` },
           })
 
           return {

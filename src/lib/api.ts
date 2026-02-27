@@ -7,7 +7,7 @@ export function createApiClient(accessToken: string) {
   const client = axios.create({
     baseURL: BASE_URL,
     headers: {
-      Authorization: `Bearer ${accessToken}`,
+      Cookie: `DnevnikAuth_a=${accessToken}`,
       'Content-Type': 'application/json',
     },
   })
