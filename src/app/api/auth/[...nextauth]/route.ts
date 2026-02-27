@@ -12,21 +12,12 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.token) return null
-
-        try {
-          const { data } = await axios.get('https://dnevnik.ru/api/users/me', {
-            headers: { Cookie: `DnevnikAuth_a=${credentials.token}` },
-          })  
-
-          return {
-            id: String(data.id),
-            name: `${data.lastName} ${data.firstName}${data.middleName ? ' ' + data.middleName : ''}`,
-            email: data.email ?? null,
-            image: data.avatarUrl ?? null,
-            accessToken: credentials.token,
-          }
-        } catch {
-          return null
+        return {
+          id: '1',
+          name: 'Пользователь',
+          email: null,
+          image: null,
+          accessToken: credentials.token,
         }
       },
     }),
