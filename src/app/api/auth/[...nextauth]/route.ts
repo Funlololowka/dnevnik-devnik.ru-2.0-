@@ -14,9 +14,9 @@ export const authOptions: NextAuthOptions = {
         if (!credentials?.token) return null
 
         try {
-          const { data } = await axios.get('https://api.dnevnik.ru/v2/users/me', {
+          const { data } = await axios.get('https://dnevnik.ru/api/users/me', {
             headers: { Cookie: `DnevnikAuth_a=${credentials.token}` },
-          })
+          })  
 
           return {
             id: String(data.id),

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import type { DnevnikUser, Lesson, Grade, Homework, Period } from '@/types'
 
-const BASE_URL = 'https://api.dnevnik.ru/v2'
+const BASE_URL = 'https://dnevnik.ru/api'
 
 export function createApiClient(accessToken: string) {
   const client = axios.create({
