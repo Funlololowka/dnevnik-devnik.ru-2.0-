@@ -1,7 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['api.dnevnik.ru', 'dnevnik.ru'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'api.dnevnik.ru',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'dnevnik.ru',
+        pathname: '/**',
+      },
+    ],
   },
 }
 
